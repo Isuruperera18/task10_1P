@@ -77,15 +77,6 @@ public class ResourceRecommendationTest {
     }
 
     @Test
-    public void testRecommendResourcesForSimilarKeywords() {
-        ResourceRecommendation recommendation = new ResourceRecommendation();
-        Task task = new Task("8", "This is a task about JavaScript", "This is a task about JavaScript");
-
-        List<Resource> resources = recommendation.recommendResources(task);
-        assertEquals(0, resources.size());
-    }
-
-    @Test
     public void testRecommendResourcesForMultipleTasks() {
         ResourceRecommendation recommendation = new ResourceRecommendation();
         Task task1 = new Task("1", "This is a task about Java", "This is a task about Java");

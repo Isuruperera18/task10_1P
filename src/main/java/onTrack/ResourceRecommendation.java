@@ -8,11 +8,15 @@ import java.util.List;
 public class ResourceRecommendation {
     public List<Resource> recommendResources(Task task) {
         List<Resource> resources = new ArrayList<>();
-        if (task.getDescription().contains("Java")) {
-            resources.add(new Resource("Java Programming Guide"));
-        }
-        if (task.getDescription().contains("Python")) {
-            resources.add(new Resource("Python Programming Guide"));
+        String description = task.getDescription();
+        if (description != null) {
+            String lowerCaseDescription = description.toLowerCase();
+            if (lowerCaseDescription.contains("java")) {
+                resources.add(new Resource("Java Programming Guide"));
+            }
+            if (lowerCaseDescription.contains("python")) {
+                resources.add(new Resource("Python Programming Guide"));
+            }
         }
         return resources;
     }
